@@ -33,7 +33,10 @@ function getRegionalValue(record) {
   if ('region' === record.layer && !_.isEmpty(record.region)) {
     // return full state name when state is the most granular piece of info
     return record.region[0];
-
+  } else if (_.isEqual(record.region, record.localadmin)) {
+      // 5t se localadmin coincide con con region (= capoluogo di provincia), ometto la adminpart della provincia
+      // console.log('_.isEqual(record.region, record.localadmin)', record.region, record.localadmin, _.isEqual(record.region, record.localadmin))
+      return ''
   } else if (!_.isEmpty(record.region_a)) {
     // otherwise just return the region code when available
     return record.region_a[0];
