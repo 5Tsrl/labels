@@ -153,7 +153,7 @@ module.exports = function( record ){
   const adminParts = buildAdminLabelPart(schema, record);
   const postfixParts = buildPostfixLabelParts(schema, record);
   //5t
-  console.log('adminParts:', adminParts)
+  console.log('adminParts:', adminParts);
 
   let labelParts = _.concat(prefixParts, adminParts, postfixParts);
 
